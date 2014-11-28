@@ -1,0 +1,141 @@
+
+****************************************************************************/
+
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int fonksiyon1(char dizi[100])
+{
+	int sayac=0;
+	for (int i = 0; i < 100; i++)
+	{
+		if (dizi[i] != 0)
+			sayac++;
+	}
+	return sayac;
+}
+
+int fonksiyon2(char dizi1[100], char dizi2[100])
+{
+	int sonuc = 1;
+	for (int i = 0; i < 100; i++)
+	{
+		if (dizi1[i] != dizi2[i])
+			sonuc = 0;
+	}
+	return sonuc;
+}
+
+char* fonksiyon3(char dizi[100], int indis, int karaktersayisi)
+{
+	char diziparcasi[100];
+	int j = 0;
+	for (int i = indis; i < (indis + karaktersayisi); i++)
+	{
+		diziparcasi[j] = dizi[i];
+		j++;
+	}
+	return diziparcasi;
+}
+
+char* fonksiyon4(char dizi[100])
+{
+	char dizinintersi[100];
+	int j = 0;
+	for (int i = 99; i >= 0; i--)
+	{
+		dizinintersi[j] = dizi[i];
+		if (dizi[i] != 0)
+			j += 1;
+	}
+	return dizinintersi[];
+}
+
+int fonksiyon5(char karakter, char dizi[100])
+{
+	int sayac = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		if (dizi[i] == karakter)
+			sayac += 1;
+	}
+	return sayac;
+}
+
+int fonksiyon6(char karakter, char dizi[100])
+{
+	int i = 0, sonuc = 0;
+	do
+	{
+		if (dizi[i] == karakter)
+			sonuc = i;
+		i++;
+	} while (sonuc == 0);
+	return sonuc;
+}
+
+char fonksiyon7(char dizi[100], int indis, int karaktersayisi)
+{
+	char yenidizi[100];
+	for (int i = 0; i < 100; i++)
+	{
+		if (i>=indis+karaktersayisi)
+		yenidizi[i-karaktersayisi] = dizi[i];
+	}
+	return yenidizi[100];
+}
+
+char fonksiyon8(char dizi[100],char eskikarakter, char yenikarakter)
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (dizi[i] == eskikarakter)
+			dizi[i] = yenikarakter;
+	}
+	return dizi[100];
+}
+
+char fonksiyon9(char dizi1[100], char dizi2[100])
+{
+	int sayac = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		if (dizi1[i] != 0)
+			sayac += 1;
+	}
+	int j = 0;
+	for (int i = sayac; i < 100; i++)
+	{
+		dizi1[i] = dizi2[j];
+		j++;
+	}
+	return dizi1[100];
+}
+
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	char dizi[100], dizi2[100];
+	dizi[0] = 'a';
+	dizi[1] = 'b';
+	dizi[2] = 'c';
+	dizi[3] = 'd';
+	dizi[4] = 'e';
+	dizi[5] = 'f';
+	dizi[6] = 'g';
+	dizi[7] = 'h';
+
+	for (int  i = 0; i < dizi.lenght(); i++)
+	{
+		dizi2[i] = fonksiyon4(dizi[i]);
+	}
+	dizi2[100] = fonksiyon4(dizi);
+	for (int i = 0; i < 10; i++)
+		cout << dizi2[i] << " ";
+	system("pause");
+	return 0;
+}
+
